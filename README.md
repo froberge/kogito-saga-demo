@@ -86,12 +86,34 @@ curl -X 'POST' \
   'http://localhost:8080/transfer' \
   -H 'accept: */*' \
   -H 'Content-Type: application/json' \
-  -d '{ "orderId" : "1234-5678"}'
+  -d '{
+"transferId": "123456789"
+}'
 ```
 
 _Response example:_
 ```
-{"id":"07f7c012-3f0a-4c4d-b4ab-23b882a4332f","fraudResponse":{"type":"SUCCESS","resourceId":null},"paymentResponse":{"type":"SUCCESS","resourceId":null},"transactionResponse":{"type":"SUCCESS","resourceId":null},"transferResponse":null,"transferId":null,"userResponse":{"type":"SUCCESS","resourceId":null}
+{
+  "id": "320e6a72-16ea-441a-8ccd-c2de37171e7c",
+  "fraudResponse": {
+    "type": "SUCCESS",
+    "resourceId": "123456789"
+  },
+  "paymentResponse": {
+    "type": "SUCCESS",
+    "resourceId": "123456789"
+  },
+  "transactionResponse": {
+    "type": "SUCCESS",
+    "resourceId": "123456789"
+  },
+  "transferResponse": null,
+  "transferId": "123456789",
+  "userResponse": {
+    "type": "SUCCESS",
+    "resourceId": "123456789"
+  }
+}
 ```
 
 
@@ -102,12 +124,37 @@ curl -X 'POST' \
   'http://localhost:8080/transfer_error' \
   -H 'accept: */*' \
   -H 'Content-Type: application/json' \
-  -d '{ "orderId" : "1234-5678"}'
+  -d '{
+ "transferId": "123456789"
+}'
 ```
 
 _Response example:_
 ```
-{"id":"074407e4-3b0a-49fc-8ef7-98869b5792da","fraudResponse":{"type":"SUCCESS","resourceId":null},"paymentResponse":{"type":"SUCCESS","resourceId":null},"transactionResponse":{"type":"SUCCESS","resourceId":null},"transferResponse":{"type":"SUCCESS","resourceId":null},"transferId":null,"userResponse":{"type":"SUCCESS","resourceId":null}}
+{
+  "id": "51f7b0aa-964b-4707-aef6-9ac04dc851f1",
+  "fraudResponse": {
+    "type": "SUCCESS",
+    "resourceId": "123456789"
+  },
+  "paymentResponse": {
+    "type": "SUCCESS",
+    "resourceId": "123456789"
+  },
+  "transactionResponse": {
+    "type": "SUCCESS",
+    "resourceId": "123456789"
+  },
+  "transferResponse": {
+    "type": "SUCCESS",
+    "resourceId": "123456789"
+  },
+  "transferId": "123456789",
+  "userResponse": {
+    "type": "SUCCESS",
+    "resourceId": "123456789"
+  }
+}
 ```
 
 ## Simulation errors
