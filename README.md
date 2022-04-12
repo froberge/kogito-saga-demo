@@ -121,7 +121,46 @@ _Response example:_
 ### Calling the process with error handling
 ```
 curl -X 'POST' \
-  'http://localhost:8080/transfer_error' \
+  'http://localhost:8080/transfer_error_handling' \
+  -H 'accept: */*' \
+  -H 'Content-Type: application/json' \
+  -d '{
+ "transferId": "123456789"
+}'
+```
+
+_Response example:_
+```
+{
+  "id": "51f7b0aa-964b-4707-aef6-9ac04dc851f1",
+  "fraudResponse": {
+    "type": "SUCCESS",
+    "resourceId": "123456789"
+  },
+  "paymentResponse": {
+    "type": "SUCCESS",
+    "resourceId": "123456789"
+  },
+  "transactionResponse": {
+    "type": "SUCCESS",
+    "resourceId": "123456789"
+  },
+  "transferResponse": {
+    "type": "SUCCESS",
+    "resourceId": "123456789"
+  },
+  "transferId": "123456789",
+  "userResponse": {
+    "type": "SUCCESS",
+    "resourceId": "123456789"
+  }
+}
+```
+
+### Calling the process with parrallalism
+```
+curl -X 'POST' \
+  'http://localhost:8080/transfer_parrallel' \
   -H 'accept: */*' \
   -H 'Content-Type: application/json' \
   -d '{
